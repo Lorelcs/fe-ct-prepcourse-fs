@@ -51,30 +51,51 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
+   return palabras.join(' ')
 }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+   //for(var i = 0 ; i < array.length ; i++) {
+   //   if(array[i] === elemento) return true
+   //}
+   //return false;
+   return array.includes(elemento)
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+    //  var suma = 0; 
+     // for(var i = 0 ; i < arrayOfNums.length ; i++){
+      //   suma = suma + arrayOfNums[i]
+      //}
+      //return suma;
+      return arrayOfNums.reduce(function(suma, elemento){
+         return suma + elemento
+      })
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+     return agregarNumeros(resultadosTest) / resultadosTest.length 
+   //FUNCION DENTRO DE OTRA 
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+    for(var i = 0 ; i < arrayOfNums ; i++){
+      if(arrayOfNums[i] > arrayOfNums[i + 1]){
+         return arrayOfNums[i]
+      }
+    }
 }
 
 function multiplicarArgumentos() {
@@ -82,6 +103,15 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+      console.log(arguments); { (iterator)}
+      if(arguments.length === 0) return 0;
+      var multiplicar = i;
+
+      for (var i = 0; i < arguments.length;i++){
+         multiplicar = multiplicar * arguments[i]
+      }
+
+      return multiplicar; 
 }
 
 function cuentoElementos(array) {
